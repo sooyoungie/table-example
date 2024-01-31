@@ -1,0 +1,13 @@
+<!-- @if (user) {
+  <div>
+    <h2>{{ user.name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p>Website: {{ user.website }}</p>
+  </div>
+} -->
+
+<div *ngIf="user">
+  <h2>{{ user.name }}</h2>
+  <p>Email: {{ user.email }}</p>
+  <p>Website: {{ user.website }}</p>
+</div>

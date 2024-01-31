@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- @for (user of users; let index = $index) {
+      <tr (click)="onUserClick(user.id)">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.website }}</td>
+      </tr>
+    } -->
+    <tr *ngFor="let user of users; let i = index" (click)="onUserClick(user.id)">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.website }}</td>
+    </tr>
+  </tbody>
+</table>
