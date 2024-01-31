@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../core/user.service';
 import { NgIf } from '@angular/common';
 
@@ -16,6 +16,7 @@ export class UserDetailsComponent implements OnInit {
   user: any;
 
   constructor(
+    public router: Router,
     private route: ActivatedRoute,
     private userService: UserService
   ) {}
@@ -29,5 +30,9 @@ export class UserDetailsComponent implements OnInit {
           this.user = user;
         });
     }
+  }
+
+  backToUserList(): void {
+    this.router.navigate(['user/user-list']);
   }
 }

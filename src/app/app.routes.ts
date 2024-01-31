@@ -2,12 +2,12 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'user',
     loadChildren: () => import('./user/user.routes')
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: '/not-found'
+    redirectTo: 'user'
   }
 ];

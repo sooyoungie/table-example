@@ -14,6 +14,6 @@ export default [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: '/not-found'
+    redirectTo: 'user-list'
   }
 ] satisfies Route[];

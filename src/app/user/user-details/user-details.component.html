@@ -1,13 +1,12 @@
-<!-- @if (user) {
-  <div>
-    <h2>{{ user.name }}</h2>
-    <p>Email: {{ user.email }}</p>
-    <p>Website: {{ user.website }}</p>
-  </div>
-} -->
-
-<div *ngIf="user">
+<div *ngIf="user; else loading" class="user-details">
   <h2>{{ user.name }}</h2>
   <p>Email: {{ user.email }}</p>
-  <p>Website: {{ user.website }}</p>
+  <p>Website: <a href="https://{{ user.website }}/" target="_blank" class="hyperlink">{{ user.website }}</a></p>
+  <button class="back-btn" (click)="backToUserList()">Back To User List</button>
 </div>
+
+<ng-template #loading>
+  <div class="user-details">
+    <p>Loading...</p>
+  </div>
+</ng-template>

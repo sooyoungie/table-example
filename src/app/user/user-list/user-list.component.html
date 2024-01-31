@@ -4,20 +4,15 @@
       <th>Name</th>
       <th>Email</th>
       <th>Website</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <!-- @for (user of users; let index = $index) {
-      <tr (click)="onUserClick(user.id)">
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.website }}</td>
-      </tr>
-    } -->
-    <tr *ngFor="let user of users; let i = index" (click)="onUserClick(user.id)">
+    <tr *ngFor="let user of users; let i = index">
       <td>{{ user.name }}</td>
       <td>{{ user.email }}</td>
       <td>{{ user.website }}</td>
+      <td><button class="btn-detail" (click)="onUserClick(user.id)">Detail</button></td>
     </tr>
   </tbody>
 </table>

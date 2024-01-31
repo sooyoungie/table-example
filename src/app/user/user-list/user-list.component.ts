@@ -16,7 +16,7 @@ import { NgIf, NgFor } from '@angular/common';
 export class UserListComponent implements OnInit {
   users: any[] = [];
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, public router: Router) {}
 
   ngOnInit(): void {
     this.userService.getUsers()
@@ -26,6 +26,6 @@ export class UserListComponent implements OnInit {
   }
 
   onUserClick(userId: number): void {
-    this.router.navigate(['/user-details', userId]);
+    this.router.navigate(['user/user-details', userId]);
   }
 }
