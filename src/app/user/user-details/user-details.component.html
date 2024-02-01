@@ -1,7 +1,20 @@
 <div *ngIf="user; else loading" class="user-details">
   <h2>{{ user.name }}</h2>
+  <p>Username: {{ user.username }}</p>
   <p>Email: {{ user.email }}</p>
+  <p>Phone: {{ user.phone }}</p>
   <p>Website: <a href="https://{{ user.website }}/" target="_blank" class="hyperlink">{{ user.website }}</a></p>
+  <div class="address">
+    <p>Address:</p>
+    <p>Street: {{ user.address.street }}</p>
+    <p>Suite: {{ user.address.suite }}</p>
+    <p>City: {{ user.address.city }}, {{ user.address.zipcode }}</p>
+  </div>
+  <div class="company">
+    <p class="company-header">{{ user.company.name }}</p>
+    <p>Catch Phrase: {{ user.company.catchPhrase }}</p>
+    <p>BS: {{ user.company.bs }}</p>
+  </div>
   <button class="back-btn" (click)="backToUserList()">Back To User List</button>
 </div>
 

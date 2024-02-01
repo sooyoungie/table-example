@@ -23,7 +23,6 @@ export class UserDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = this.route.snapshot.paramMap.get('id');
-    console.log('aaa', userId)
     if (userId) {
       this.userService.getUserDetails(+userId)
         .subscribe(user => {
